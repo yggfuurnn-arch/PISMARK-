@@ -1,6 +1,17 @@
 const $ = (selector, parent = document) => parent.querySelector(selector);
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+const servicesVideo = $('#services video');
+if (servicesVideo && !reduceMotion) {
+  const playServicesVideo = () => servicesVideo.play().catch(() => {});
+  servicesVideo.muted = true;
+  playServicesVideo();
+  servicesVideo.addEventListener('canplay', playServicesVideo, { once: true });
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) playServicesVideo();
+  });
+}
+
 window.addEventListener('load', () => {
   window.setTimeout(() => {
     $('.site-loader').classList.add('is-gone');
