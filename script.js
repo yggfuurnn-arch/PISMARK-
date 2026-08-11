@@ -1,40 +1,74 @@
-const $ = (s, c = document) => c.querySelector(s);
+const $ = (selector, parent = document) => parent.querySelector(selector);
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 window.addEventListener('load', () => {
-  setTimeout(() => $('.preloader').classList.add('done'), 700);
-  document.body.classList.add('ready');
+  window.setTimeout(() => {
+    $('.site-loader').classList.add('is-gone');
+    document.body.classList.add('is-ready');
+  }, reduceMotion ? 0 : 650);
 });
 
 $('#year').textContent = new Date().getFullYear();
 
+const header = $('.site-header');
+const progress = $('.scroll-progress span');
+const updateScroll = () => {
+  header.classList.toggle('is-scrolled', window.scrollY > 24);
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  progress.style.width = `${scrollable ? (window.scrollY / scrollable) * 100 : 0}%`;
+};
+window.addEventListener('scroll', updateScroll, { passive: true });
+updateScroll();
+
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
-}, { threshold: .12 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
 
-window.addEventListener('scroll', () => {
-  const h = document.documentElement.scrollHeight - window.innerHeight;
-  $('.progress span').style.width = `${(window.scrollY / h) * 100}%`;
-}, { passive: true });
-
-const dot = $('.cursor-dot');
-window.addEventListener('pointermove', e => { dot.style.left = `${e.clientX}px`; dot.style.top = `${e.clientY}px`; });
-document.querySelectorAll('a,button').forEach(el => {
-  el.addEventListener('mouseenter', () => { dot.style.width = '28px'; dot.style.height = '28px'; dot.style.background = '#1957ed22'; });
-  el.addEventListener('mouseleave', () => { dot.style.width = '10px'; dot.style.height = '10px'; dot.style.background = 'transparent'; });
+const menuButton = $('.menu-toggle');
+const mobileMenu = $('#mobile-menu');
+menuButton.addEventListener('click', () => {
+  const open = menuButton.getAttribute('aria-expanded') === 'true';
+  menuButton.setAttribute('aria-expanded', String(!open));
+  mobileMenu.hidden = open;
 });
+mobileMenu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+  menuButton.setAttribute('aria-expanded', 'false');
+  mobileMenu.hidden = true;
+}));
 
-document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => {
-  document.querySelectorAll('[data-filter]').forEach(b => b.classList.remove('active'));
-  button.classList.add('active');
+document.querySelectorAll('[data-filter]').forEach((button) => button.addEventListener('click', () => {
+  document.querySelectorAll('[data-filter]').forEach((item) => item.classList.remove('is-active'));
+  button.classList.add('is-active');
   const filter = button.dataset.filter;
-  document.querySelectorAll('.project').forEach(card => {
-    const show = filter === 'all' || card.dataset.category.includes(filter);
-    card.style.display = show ? '' : 'none';
+  document.querySelectorAll('.project-card').forEach((card) => {
+    const visible = filter === 'all' || card.dataset.category.includes(filter);
+    card.hidden = !visible;
   });
 }));
 
-document.querySelectorAll('.magnetic').forEach(el => {
-  el.addEventListener('mousemove', e => { const r = el.getBoundingClientRect(); el.style.transform = `translate(${(e.clientX-r.left-r.width/2)*.12}px, ${(e.clientY-r.top-r.height/2)*.12}px)`; });
-  el.addEventListener('mouseleave', () => el.style.transform = 'translate(0,0)');
-});
+if (!reduceMotion && window.matchMedia('(hover: hover)').matches) {
+  const cursor = $('.cursor');
+  window.addEventListener('pointermove', (event) => {
+    cursor.style.left = `${event.clientX}px`;
+    cursor.style.top = `${event.clientY}px`;
+  });
+  document.querySelectorAll('a, button').forEach((element) => {
+    element.addEventListener('mouseenter', () => cursor.classList.add('is-active'));
+    element.addEventListener('mouseleave', () => cursor.classList.remove('is-active'));
+  });
+  document.querySelectorAll('.magnetic').forEach((element) => {
+    element.addEventListener('pointermove', (event) => {
+      const bounds = element.getBoundingClientRect();
+      const x = (event.clientX - bounds.left - bounds.width / 2) * 0.13;
+      const y = (event.clientY - bounds.top - bounds.height / 2) * 0.13;
+      element.style.transform = `translate(${x}px, ${y}px)`;
+    });
+    element.addEventListener('pointerleave', () => { element.style.transform = ''; });
+  });
+}

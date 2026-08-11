@@ -1,13 +1,13 @@
-# PISMARK Studio
+# PISMARK — GitHub Pages deployment
 
-Static portfolio concept for Youssef Hamdy. Open `index.html` in a browser to preview.
+This folder is ready for GitHub Pages. It is a static site and needs no build command or npm installation.
 
-## Before publishing
+## Publish
 
-1. Replace the four concept projects in `index.html` with real projects, screenshots and links.
-2. The contact form uses FormSubmit and sends to `youssefelsayed14141@gmail.com`. Its first submission requires email activation from FormSubmit.
-3. Create a GitHub repository, upload these files, then import the repository into Vercel for a free deployment. A custom domain can be connected later.
+1. Open the `PISMARK-` GitHub repository.
+2. Replace the repository's root files with the contents of this folder. Keep `index.html` at the repository root.
+3. Commit and push the files to the `main` branch.
+4. In **Settings → Pages**, choose **Deploy from a branch**, then select `main` and `/ (root)`.
+5. Wait a few minutes for GitHub Pages to publish the update.
 
-## Content notes
-
-`PISMARK` is positioned as an independent premium digital studio—more credible than the literal “PISMARK SITE”, while preserving the name as a distinct brand.
+The site uses hosted Google Fonts, Unsplash images, and a public video URL; no local image or video files need to be uploaded.
