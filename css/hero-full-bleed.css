@@ -1,0 +1,4 @@
+/* Keep the hero content on the reading grid while the moving visual fills the viewport. */
+.hero-stage{inset:0;left:50%;right:auto;width:100vw;transform:translateX(-50%);border-radius:0}
+.hero-title{font-size:clamp(54px,7.6vw,120px)}
+@media(max-width:780px){.hero-title{font-size:14.5vw}}
