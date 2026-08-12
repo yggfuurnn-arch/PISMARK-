@@ -43,6 +43,7 @@ body {
   border: 0;
 }
 
+/* Fixed viewport background video - stays visible throughout scrolling */
 .page-video {
   position: fixed;
   inset: 0;

@@ -10,17 +10,19 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/accessibility.css" />
-    <link rel="stylesheet" href="css/services-video.css" />
   </head>
   <body>
     <a class="skip-link" href="#content">Skip to content</a>
     <div class="site-loader" aria-hidden="true"><span>P</span><i></i></div>
+
+    <!-- Fixed full-bleed background video that stays visible while scrolling -->
     <div class="page-video" aria-hidden="true">
       <video autoplay loop muted playsinline preload="auto">
         <source src="assets/background-video.mp4" type="video/mp4" />
       </video>
       <div class="video-tint"></div>
     </div>
+
     <div class="scroll-progress" aria-hidden="true"><span></span></div>
     <div class="noise" aria-hidden="true"></div>
 
@@ -64,13 +66,7 @@
         </div>
       </section>
 
-      <section class="slide services" id="services" aria-labelledby="services-title">
-        <div class="services-video" aria-hidden="true">
-          <video autoplay loop muted playsinline preload="auto">
-            <source src="assets/services-background.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <div class="services-video-overlay" aria-hidden="true"></div>
+      <section class="slide" id="services" aria-labelledby="services-title">
         <div class="shell slide-inner split-layout reveal">
           <p class="kicker">(004) Expertise</p>
           <div class="slide-copy"><h2 id="services-title">Every detail<br /><em>pulls its weight.</em></h2></div>
