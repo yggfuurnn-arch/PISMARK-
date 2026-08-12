@@ -8,16 +8,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="accessibility.css" />
-    <link rel="stylesheet" href="hero-full-bleed.css" />
-    <link rel="stylesheet" href="services-video.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/accessibility.css" />
+    <link rel="stylesheet" href="css/services-video.css" />
   </head>
   <body>
     <a class="skip-link" href="#content">Skip to content</a>
     <div class="site-loader" aria-hidden="true"><span>P</span><i></i></div>
+    <div class="page-video" aria-hidden="true">
+      <video autoplay loop muted playsinline preload="auto">
+        <source src="assets/background-video.mp4" type="video/mp4" />
+      </video>
+      <div class="video-tint"></div>
+    </div>
     <div class="scroll-progress" aria-hidden="true"><span></span></div>
-    <div class="cursor" aria-hidden="true"></div>
     <div class="noise" aria-hidden="true"></div>
 
     <header class="site-header" id="top">
@@ -25,7 +29,7 @@
       <nav class="desktop-nav" aria-label="Main navigation">
         <a href="#work">Selected work</a><a href="#studio">About</a><a href="#services">Expertise</a>
       </nav>
-      <a class="header-cta magnetic" href="#contact">Start a project <span>↗</span></a>
+      <a class="header-cta" href="#contact">Start a project <span>↗</span></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span class="sr-only">Open menu</span></button>
     </header>
     <div class="mobile-menu" id="mobile-menu" hidden>
@@ -33,84 +37,56 @@
     </div>
 
     <main id="content" tabindex="-1">
-      <section class="hero shell">
-        <div class="hero-stage" aria-hidden="true">
-          <video autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1519608487953-e999c86e7450?auto=format&amp;fit=crop&amp;w=1800&amp;q=80">
-            <source src="https://ik.imagekit.io/lrigu76hy/tailark/dna-video.mp4?updatedAt=1745736251477" type="video/mp4" />
-          </video>
-          <div class="hero-shade"></div><div class="hero-grid"></div><div class="hero-glow"></div>
-        </div>
-        <div class="hero-top intro"><span>(001) INDEPENDENT DIGITAL STUDIO</span><span>CAIRO / WORLDWIDE</span></div>
-        <div class="hero-content">
-          <p class="kicker intro">Clarity in motion</p>
-          <h1 class="hero-title"><span class="intro">Digital experiences</span><span class="intro hero-title__italic">with a pulse.</span></h1>
-          <div class="hero-footer intro">
-            <p>For founders and brands who want their digital presence to feel as intentional as the thing they are building.</p>
-            <a class="round-cta magnetic" href="#work"><span>Explore<br />the work</span><b>↓</b></a>
+      <section class="slide hero" aria-labelledby="hero-title">
+        <div class="shell slide-inner">
+          <div class="slide-meta intro"><span>(001) INDEPENDENT DIGITAL STUDIO</span><span>CAIRO / WORLDWIDE</span></div>
+          <div class="slide-copy">
+            <p class="kicker intro">Clarity in motion</p>
+            <h1 id="hero-title" class="hero-title"><span class="intro">Digital experiences</span><span class="intro italic">with a pulse.</span></h1>
+            <div class="slide-bottom intro"><p>For founders and brands who want their digital presence to feel as intentional as the thing they are building.</p><a class="circle-link" href="#work">Scroll to<br />explore <b>↓</b></a></div>
           </div>
         </div>
-        <div class="hero-orbit" aria-hidden="true"><span>STRATEGY · DESIGN · DEVELOPMENT · MOTION · </span></div>
       </section>
 
-      <section class="ticker" aria-label="PISMARK capabilities"><div><span>Digital strategy</span><i>✦</i><span>Art direction</span><i>✦</i><span>Web design</span><i>✦</i><span>Creative development</span><i>✦</i><span>Digital strategy</span><i>✦</i><span>Art direction</span><i>✦</i><span>Web design</span><i>✦</i><span>Creative development</span><i>✦</i></div></section>
-
-      <section class="work shell section" id="work">
-        <div class="section-intro reveal">
+      <section class="slide" id="work" aria-labelledby="work-title">
+        <div class="shell slide-inner split-layout reveal">
           <p class="kicker">(002) Selected work</p>
-          <h2>A point of view<br /><em>made visible.</em></h2>
-          <p class="section-copy">A selection of launch-ready concepts built to show how strategy, story and technology can meet in one memorable experience.</p>
-        </div>
-        <div class="project-filters reveal" role="group" aria-label="Filter projects"><button class="is-active" data-filter="all">All</button><button data-filter="web">Digital</button><button data-filter="brand">Brand</button><button data-filter="motion">Motion</button></div>
-        <div class="projects">
-          <a class="project-card project-card--wide reveal" data-category="web brand" href="#contact">
-            <figure><img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&amp;fit=crop&amp;w=1800&amp;q=85" alt="Modern architectural facade" /><span class="project-index">01</span><span class="project-label">ÉLAN / ARCHITECTURE</span><div class="project-overlay"><strong>Spaces<br />that speak.</strong></div></figure>
-            <div class="project-meta"><div><h3>Élan Architecture</h3><p>Digital direction · Website · Build</p></div><span>View case study ↗</span></div>
-          </a>
-          <a class="project-card project-card--offset reveal" data-category="web motion" href="#contact">
-            <figure><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Sculptural furniture detail" /><span class="project-index">02</span><span class="project-label">VANTA / OBJECTS</span><div class="project-overlay"><strong>Objects<br /><em>in motion.</em></strong></div></figure>
-            <div class="project-meta"><div><h3>Vanta Objects</h3><p>Commerce · Motion · Experience</p></div><span>View case study ↗</span></div>
-          </a>
-          <a class="project-card reveal" data-category="brand web" href="#contact">
-            <figure><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Skincare products and flowers" /><span class="project-index">03</span><span class="project-label">LUMIÈRE / SKINCARE</span><div class="project-overlay"><strong>Ritual,<br /><em>reimagined.</em></strong></div></figure>
-            <div class="project-meta"><div><h3>Lumière Skincare</h3><p>Identity · E-commerce · Content</p></div><span>View case study ↗</span></div>
-          </a>
-          <a class="project-card project-card--wide reveal" data-category="motion web" href="#contact">
-            <figure><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1557682250-33bd709cbe85?auto=format&amp;fit=crop&amp;w=1800&amp;q=85" alt="Abstract dark purple gradient" /><span class="project-index">04</span><span class="project-label">ATELIER / MOTION</span><div class="project-overlay"><strong>Form<br /><em>informed by rhythm.</em></strong></div></figure>
-            <div class="project-meta"><div><h3>Atelier Motion</h3><p>Art direction · Campaign · Development</p></div><span>View case study ↗</span></div>
-          </a>
-        </div>
-        <a class="line-link reveal" href="#contact">See all projects <span>↗</span></a>
-      </section>
-
-      <section class="studio section" id="studio">
-        <div class="shell studio-layout">
-          <div class="studio-mark reveal"><span>YH</span><p>Youssef Hamdy<br />Founder &amp; creative developer</p></div>
-          <div class="studio-copy reveal"><p class="kicker">(003) The studio</p><h2>Small team.<br /><em>Serious</em> energy.</h2><p>PISMARK is the independent practice of Youssef Hamdy, a frontend developer and digital designer based in Cairo. I partner with ambitious people to make their digital presence feel as considered as their product.</p><p>The work balances taste with technical care: sharp strategy, expressive design and clean builds that move quickly and scale gracefully.</p><a class="line-link line-link--light" href="#contact">More about PISMARK <span>↗</span></a></div>
+          <div class="slide-copy"><h2 id="work-title">A point of view<br /><em>made visible.</em></h2><p class="lead">A selection of launch-ready concepts where strategy, story and technology meet in one memorable experience.</p></div>
+          <ol class="text-list" aria-label="Selected projects"><li><span>01</span> Élan Architecture <small>Digital direction · Website · Build</small></li><li><span>02</span> Vanta Objects <small>Commerce · Motion · Experience</small></li><li><span>03</span> Lumière Skincare <small>Identity · E-commerce · Content</small></li><li><span>04</span> Atelier Motion <small>Art direction · Campaign · Development</small></li></ol>
         </div>
       </section>
 
-      <section class="services shell section" id="services">
-        <div class="services-video" aria-hidden="true"><video autoplay loop muted playsinline preload="metadata"><source src="assets/services-background.mp4" type="video/mp4" /></video></div>
+      <section class="slide" id="studio" aria-labelledby="studio-title">
+        <div class="shell slide-inner split-layout reveal">
+          <p class="kicker">(003) The studio</p>
+          <div class="slide-copy"><h2 id="studio-title">Small team.<br /><em>Serious</em> energy.</h2><p class="lead">PISMARK is the independent practice of Youssef Hamdy, a frontend developer and digital designer based in Cairo.</p><p class="body-copy">I partner with ambitious people to make their digital presence feel as considered as their product: sharp strategy, expressive design and clean builds that move quickly and scale gracefully.</p></div>
+          <p class="signature" aria-label="Youssef Hamdy, founder and creative developer">YH</p>
+        </div>
+      </section>
+
+      <section class="slide services" id="services" aria-labelledby="services-title">
+        <div class="services-video" aria-hidden="true">
+          <video autoplay loop muted playsinline preload="auto">
+            <source src="assets/services-background.mp4" type="video/mp4" />
+          </video>
+        </div>
         <div class="services-video-overlay" aria-hidden="true"></div>
-        <div class="section-intro reveal"><p class="kicker">(004) Expertise</p><h2>Every detail<br /><em>pulls its weight.</em></h2></div>
-        <div class="service-list">
-          <article class="service reveal"><span>01</span><h3>Digital strategy</h3><p>Positioning, content and a clear roadmap before the first screen is made.</p><b>↗</b></article>
-          <article class="service reveal"><span>02</span><h3>UI/UX &amp; web design</h3><p>Intuitive interfaces with a strong visual point of view.</p><b>↗</b></article>
-          <article class="service reveal"><span>03</span><h3>Creative development</h3><p>Fast, responsive sites engineered to feel effortless.</p><b>↗</b></article>
-          <article class="service reveal"><span>04</span><h3>Brand &amp; motion</h3><p>Distinctive systems and movement with a reason to exist.</p><b>↗</b></article>
+        <div class="shell slide-inner split-layout reveal">
+          <p class="kicker">(004) Expertise</p>
+          <div class="slide-copy"><h2 id="services-title">Every detail<br /><em>pulls its weight.</em></h2></div>
+          <ul class="text-list service-list"><li><span>01</span> Digital strategy <small>Positioning, content and a clear roadmap.</small></li><li><span>02</span> UI/UX &amp; web design <small>Interfaces with a strong visual point of view.</small></li><li><span>03</span> Creative development <small>Responsive sites engineered to feel effortless.</small></li><li><span>04</span> Brand &amp; motion <small>Distinctive systems and movement with a reason.</small></li></ul>
         </div>
       </section>
 
-      <section class="statement"><div class="shell reveal"><p class="kicker">The PISMARK approach</p><p class="statement-text">Your audience notices the <em>feeling</em> before they process the features. We make that first second count.</p></div></section>
+      <section class="slide statement" aria-labelledby="approach-title">
+        <div class="shell slide-inner statement-inner reveal"><p class="kicker">The PISMARK approach</p><h2 id="approach-title">Your audience notices the <em>feeling</em> before they process the features. We make that first second count.</h2></div>
+      </section>
 
-      <section class="contact section" id="contact">
-        <div class="shell contact-layout">
-          <div class="contact-copy reveal"><p class="kicker">(005) Start a project</p><h2>Let’s make<br /><em>something felt.</em></h2><p>Tell me what you are building. I’ll reply within two business days with a clear next step.</p><a class="email" href="mailto:youssefelsayed14141@gmail.com">youssefelsayed<br />@gmail.com <span>↗</span></a><div class="social-links"><a href="https://www.linkedin.com/in/youssef-hamdy-336260428" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://www.instagram.com/_.yousseff1?igsh=NmF3ZjM2eTczZzhz&amp;utm_source=qr" target="_blank" rel="noreferrer">Instagram ↗</a><a href="tel:+201070184121">+20 107 018 4121</a></div></div>
-          <form class="contact-form reveal" action="https://formsubmit.co/youssefelsayed14141@gmail.com" method="POST"><input type="hidden" name="_subject" value="New PISMARK project enquiry" /><input type="hidden" name="_captcha" value="false" /><label>Your name<input required name="name" autocomplete="name" placeholder="What should I call you?" /></label><label>Email address<input required type="email" name="email" autocomplete="email" placeholder="Where can I reach you?" /></label><label>Tell me a little about it<textarea required name="message" rows="4" placeholder="Project, timeline, ambition…"></textarea></label><button class="form-submit magnetic" type="submit">Send enquiry <span>↗</span></button><small>By sending this form, you agree to be contacted about your enquiry.</small></form>
-        </div>
+      <section class="slide" id="contact" aria-labelledby="contact-title">
+        <div class="shell slide-inner contact-inner reveal"><p class="kicker">(005) Start a project</p><h2 id="contact-title">Let’s make<br /><em>something felt.</em></h2><p class="lead">Tell me what you are building. I’ll reply within two business days with a clear next step.</p><a class="email" href="mailto:youssefelsayed14141@gmail.com">youssefelsayed<br />@gmail.com <span>↗</span></a><div class="social-links"><a href="https://www.linkedin.com/in/youssef-hamdy-336260428" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://www.instagram.com/_.yousseff1?igsh=NmF3ZjM2eTczZzhz&amp;utm_source=qr" target="_blank" rel="noreferrer">Instagram ↗</a><a href="tel:+201070184121">+20 107 018 4121</a></div></div>
       </section>
     </main>
     <footer class="site-footer shell"><a class="wordmark" href="#top"><span class="wordmark__seal">P</span><span>PISMARK<sup>®</sup></span></a><p>© <span id="year"></span> PISMARK Studio. Cairo / Worldwide.</p><a href="#top">Back to top ↑</a></footer>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
