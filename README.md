@@ -1,4 +1,4 @@
-# PISMARK Studio — Digital Experience Portfolio
+# PISMARK Studio — Live Video Background Portfolio
 
 A high-performance, video-backed studio portfolio designed for **PISMARK** (Youssef Hamdy, Cairo / Worldwide). Ready for instant deployment on GitHub Pages.
 
@@ -7,13 +7,13 @@ A high-performance, video-backed studio portfolio designed for **PISMARK** (Yous
 ## 📁 Repository Structure
 
 ```
-PISMARK-Portfolio-Final/
+PISMARK-Portfolio-LiveVideo/
 ├── .gitignore               # Excludes OS temp files & raw sources
 ├── .nojekyll                # Bypasses Jekyll processing on GitHub Pages
 ├── index.html               # Main website markup & smooth-scroll sections
 ├── README.md                # Project documentation & deployment guide
 ├── assets/                  # Video & media assets
-│   └── background-video.mp4  # Single fixed full-page ambient background video (21.8 MB)
+│   └── background-video.mp4  # Web-safe H.264 live looping video background (3.9 MB)
 ├── css/                     # Styling stylesheets
 │   ├── styles.css           # Core typography, dark theme & responsive layout
 │   └── accessibility.css    # Focus styles, skip links & screen reader rules
@@ -29,7 +29,7 @@ PISMARK-Portfolio-Final/
 2. Push to GitHub:
    ```bash
    git add .
-   git commit -m "Deploy PISMARK Video Portfolio"
+   git commit -m "Deploy PISMARK Live Video Portfolio"
    git push origin main
    ```
 3. Enable GitHub Pages in Repository Settings -> Pages.
