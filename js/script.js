@@ -1,14 +1,16 @@
 const $ = (selector, parent = document) => parent.querySelector(selector);
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-const backgroundVideo = $('.page-video video');
-if (backgroundVideo && !reduceMotion) {
-  const playVideo = () => backgroundVideo.play().catch(() => {});
-  backgroundVideo.muted = true;
-  playVideo();
-  backgroundVideo.addEventListener('canplay', playVideo, { once: true });
-  document.addEventListener('visibilitychange', () => {
-    if (!document.hidden) playVideo();
+const videos = document.querySelectorAll('video');
+if (videos.length && !reduceMotion) {
+  videos.forEach((video) => {
+    video.muted = true;
+    const playVideo = () => video.play().catch(() => {});
+    playVideo();
+    video.addEventListener('canplay', playVideo, { once: true });
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) playVideo();
+    });
   });
 }
 

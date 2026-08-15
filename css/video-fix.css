@@ -1,0 +1,4 @@
+/* The fixed video must sit above the document canvas and below every text layer. */
+body { background: transparent; }
+.page-video { z-index: 0; }
+main, .site-footer { position: relative; z-index: 1; }
