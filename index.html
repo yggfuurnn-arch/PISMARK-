@@ -1,4 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="PISMARK — Digital experiences for brands with a point of view." />
+    <title>PISMARK — Digital experiences, precisely built.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/accessibility.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <div class="site-loader" aria-hidden="true"><span>P</span><i></i></div>
 
+    <!-- Fixed full-bleed live video background that stays visible throughout scrolling -->
+    <div class="page-video" aria-hidden="true">
+      <video autoplay loop muted playsinline preload="auto">
+        <source src="assets/background-video.mp4" type="video/mp4" />
+      </video>
+      <div class="video-tint"></div>
+    </div>
+
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+    <div class="noise" aria-hidden="true"></div>
+
+    <header class="site-header" id="top">
+      <a class="wordmark" href="#top" aria-label="PISMARK home"><span class="wordmark__seal">P</span><span>PISMARK<sup>®</sup></span></a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#work">Selected work</a><a href="#studio">About</a><a href="#services">Expertise</a>
+      </nav>
+      <a class="header-cta" href="#contact">Start a project <span>↗️</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span class="sr-only">Open menu</span></button>
+    </header>
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <a href="#work">Selected work</a><a href="#studio">About</a><a href="#services">Expertise</a><a href="#contact">Start a project ↗️</a>
+    </div>
+
+    <main id="content" tabindex="-1">
+      <section class="slide hero" aria-labelledby="hero-title">
+        <div class="shell slide-inner">
+          <div class="slide-meta intro"><span>(001) INDEPENDENT DIGITAL STUDIO</span><span>CAIRO / WORLDWIDE</span></div>
+          <div class="slide-copy">
+            <p class="kicker intro">Clarity in motion</p>
+            <h1 id="hero-title" class="hero-title"><span class="intro">Digital experiences</span><span class="intro italic">with a pulse.</span></h1>
+            <div class="slide-bottom intro"><p>For founders and brands who want their digital presence to feel as intentional as the thing they are building.</p><a class="circle-link" href="#work">Scroll to<br />explore <b>↓</b></a></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" id="work" aria-labelledby="work-title">
+        <div class="shell slide-inner split-layout reveal">
+          <p class="kicker">(002) Selected work</p>
+          <div class="slide-copy"><h2 id="work-title">A point of view<br /><em>made visible.</em></h2><p class="lead">A selection of launch-ready concepts where strategy, story and technology meet in one memorable experience.</p></div>
+          <ol class="text-list" aria-label="Selected projects"><li><span>01</span> Élan Architecture <small>Digital direction · Website · Build</small></li><li><span>02</span> Vanta Objects <small>Commerce · Motion · Experience</small></li><li><span>03</span> Lumière Skincare <small>Identity · E-commerce · Content</small></li><li><span>04</span> Atelier Motion <small>Art direction · Campaign · Development</small></li></ol>
+        </div>
+      </section>
+
+      <section class="slide" id="studio" aria-labelledby="studio-title">
+        <div class="shell slide-inner split-layout reveal">
+          <p class="kicker">(003) The studio</p>
+          <div class="slide-copy"><h2 id="studio-title">Small team.<br /><em>Serious</em> energy.</h2><p class="lead">PISMARK is the independent practice of Youssef Hamdy, a frontend developer and digital designer based in Cairo.</p><p class="body-copy">I partner with ambitious people to make their digital presence feel as considered as their product: sharp strategy, expressive design and clean builds that move quickly and scale gracefully.</p></div>
+          <p class="signature" aria-label="Youssef Hamdy, founder and creative developer">YH</p>
+        </div>
+      </section>
+
+      <section class="slide" id="services" aria-labelledby="services-title">
+        <div class="shell slide-inner split-layout reveal">
+          <p class="kicker">(004) Expertise</p>
+          <div class="slide-copy"><h2 id="services-title">Every detail<br /><em>pulls its weight.</em></h2></div>
+          <ul class="text-list service-list"><li><span>01</span> Digital strategy <small>Positioning, content and a clear roadmap.</small></li><li><span>02</span> UI/UX &amp; web design <small>Interfaces with a strong visual point of view.</small></li><li><span>03</span> Creative development <small>Responsive sites engineered to feel effortless.</small></li><li><span>04</span> Brand &amp; motion <small>Distinctive systems and movement with a reason.</small></li></ul>
+        </div>
+      </section>
+
+      <section class="slide statement" aria-labelledby="approach-title">
+        <div class="shell slide-inner statement-inner reveal"><p class="kicker">The PISMARK approach</p><h2 id="approach-title">Your audience notices the <em>feeling</em> before they process the features. We make that first second count.</h2></div>
+      </section>
+
+      <section class="slide" id="contact" aria-labelledby="contact-title">
+        <div class="shell slide-inner contact-inner reveal"><p class="kicker">(005) Start a project</p><h2 id="contact-title">Let’s make<br /><em>something felt.</em></h2><p class="lead">Tell me what you are building. I’ll reply within two business days with a clear next step.</p><a class="email" href="mailto:youssefelsayed14141@gmail.com">youssefelsayed<br />@gmail.com <span>↗️</span></a><div class="social-links"><a href="https://www.linkedin.com/in/youssef-hamdy-336260428" target="_blank" rel="noreferrer">LinkedIn ↗️</a><a href="https://www.instagram.com/_.yousseff1?igsh=NmF3ZjM2eTczZzhz&amp;utm_source=qr" target="_blank" rel="noreferrer">Instagram ↗️</a><a href="tel:+201070184121">+20 107 018 4121</a></div></div>
+      </section>
+    </main>
+    <footer class="site-footer shell"><a class="wordmark" href="#top"><span class="wordmark__seal">P</span><span>PISMARK<sup>®</sup></span></a><p>© <span id="year"></span> PISMARK Studio. Cairo / Worldwide.</p><a href="#top">Back to top ↑</a></footer>
+    <script src="js/script.js"></script>
+  </body>
 <!-- Full index.html content (only the email and Instagram URL have been changed) -->
 <!DOCTYPE html>
 <html lang="en">
