@@ -1,35 +1,12 @@
-# PISMARK Studio — Live Video Background Portfolio
+# PISMARK — case studies site
 
-A high-performance, video-backed studio portfolio designed for **PISMARK** (Youssef Hamdy, Cairo / Worldwide). Ready for instant deployment on GitHub Pages.
+Upload the contents of this folder to the root of your GitHub Pages repository.
 
----
+The website includes:
 
-## 📁 Repository Structure
+- A premium studio homepage with three real PISMARK projects.
+- A dedicated case-study page for TRIPLES, Enhanced Dental Clinic, and O’leo Natural Oils.
+- A looping H.264 background video that is compatible with browsers.
+- All supplied project screenshots stored locally in `assets/`.
 
-```
-PISMARK-Portfolio-LiveVideo/
-├── .gitignore               # Excludes OS temp files & raw sources
-├── .nojekyll                # Bypasses Jekyll processing on GitHub Pages
-├── index.html               # Main website markup & smooth-scroll sections
-├── README.md                # Project documentation & deployment guide
-├── assets/                  # Video & media assets
-│   └── background-video.mp4  # Web-safe H.264 live looping video background (3.9 MB)
-├── css/                     # Styling stylesheets
-│   ├── styles.css           # Core typography, dark theme & responsive layout
-│   └── accessibility.css    # Focus styles, skip links & screen reader rules
-└── js/                      # Client-side JavaScript
-    └── script.js            # Video autoplay control, scroll progress & mobile menu
-```
-
----
-
-## 🚀 How to Publish to GitHub Pages
-
-1. Copy the contents of this folder into your local GitHub repository.
-2. Push to GitHub:
-   ```bash
-   git add .
-   git commit -m "Deploy PISMARK Live Video Portfolio"
-   git push origin main
-   ```
-3. Enable GitHub Pages in Repository Settings -> Pages.
+Keep the folder structure unchanged when uploading, especially `assets/`, `css/`, and `js/`.
